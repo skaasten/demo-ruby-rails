@@ -17,6 +17,9 @@ jobs:
     # Install gems, run rspec tests
     docker:
       - image: cimg/ruby:2.7-node
+      - image: circleci/postgres:9.5-alpine
+    environment:
+      RAILS_ENV: test
     steps:
       - checkout
       - ruby/install-deps
